@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}edit task{% endblock %}
+
+{% block content %}
+    <h1>Edit task</h1>
+    <form method="POST">
+        <input type="text" name="title" value="{{ task.title }}" required>
+        <label>
+            <input type="checkbox" name="complete"
+                    {% if task.complete %}checked{% endif %}>
+        </label>
+        <button type="submit">save changes</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ToDo App{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: beige; }
+        nav { background-color: #333; padding: 15px; margin-bottom: 20px; }
+        nav a { color: white; margin-right: 20px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .content { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Mainpage</a>
+        <a href="{{ url_for('add') }}">Add</a>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
